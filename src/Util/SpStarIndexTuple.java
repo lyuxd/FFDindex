@@ -1,6 +1,7 @@
 package Util;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class SpStarIndexTuple extends IndexTupleAbstract{
@@ -23,7 +24,14 @@ public class SpStarIndexTuple extends IndexTupleAbstract{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return Sp;
+		StringBuilder sb = new StringBuilder();
+		sb.append("sp: "+Sp+" DegMap: ");
+		Iterator<String> it = DegMap.keySet().iterator();  // Set类型的key值集合，并转换为迭代器
+        while(it.hasNext()){                        
+            String key = (String) it.next(); 
+            sb.append(key+" ").append(DegMap.get(key)+" ");     
+        }
+		return sb.toString();
 	}
 	@Override
 	//line format: sp\tent1<>deg1<>ent2<>deg2...

@@ -21,6 +21,7 @@ public class QuerySpIndex extends QueryIndex {
 				.execute(CQLPreparedStatement.STM_QUERY_SP.bind(key));
 		SpStarIndexTuple spStarIndexTuple = new SpStarIndexTuple();
 		for(Row row : result){
+			//System.out.println(row.getString(1));
 			spStarIndexTuple.setSp(row.getString("sp"));
 			spStarIndexTuple.setDegMap(row.getMap("degmap", String.class, Integer.class));
 			//Normally, only one tuple is retrieved. So break is ok.

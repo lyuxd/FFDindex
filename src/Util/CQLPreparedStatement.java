@@ -25,7 +25,7 @@ public class CQLPreparedStatement {
 	 * 
 	 */
 	private static String STATEMENT_STRING_QUERY_SP = 
-			"SELECT degmap FROM mykeyspace.spstar WHERE sp=?;";
+			"SELECT * FROM mykeyspace.spstar WHERE sp=?;";
 	public static PreparedStatement STM_QUERY_SP = 
 			CassandraSession.getCassandraSession().prepare(STATEMENT_STRING_QUERY_SP);
 	
