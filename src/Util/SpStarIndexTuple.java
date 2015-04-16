@@ -29,7 +29,7 @@ public class SpStarIndexTuple extends IndexTupleAbstract{
 		Iterator<String> it = DegMap.keySet().iterator();  // Set类型的key值集合，并转换为迭代器
         while(it.hasNext()){                        
             String key = (String) it.next(); 
-            sb.append(key+" ").append(DegMap.get(key)+" ");     
+            sb.append("<"+key+",").append(DegMap.get(key)+"> ");     
         }
 		return sb.toString();
 	}
